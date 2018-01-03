@@ -1,3 +1,9 @@
+/*
+	Recursive Fibonacci Function
+	by Martin Fairbanks
+
+*/
+
 #include <stdio.h>
 
 int fibonacci(int num)
@@ -17,6 +23,6 @@ int main()
 		printf("%d ", fibonacci(i));
 	}
 	printf("\n");
-	system ("PAUSE");
+
 	return 0;
 }

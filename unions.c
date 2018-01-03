@@ -1,9 +1,12 @@
-#include <stdio.h>
-
 /*
+	Unions
+	by Martin Fairbanks
+
 	A union is similarly to structures but only holds the value of one of its data members at any one time.
 	Each data member shares the same memory space and a union only occupies as much space as the largest member
 */
+
+#include <stdio.h>
 
 enum Colors { RED = 0xff0000, GREEN = 0x00ff00, BLUE = 0x0000ff };
 
@@ -46,7 +49,5 @@ int main()
 
 	printf("%d\n", data.word.hi);
 	printf("%d\n", data.word.lo);
-
-	system("PAUSE");
 	return 0;
 }
