@@ -5,6 +5,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 typedef struct BinaryTree BinaryTree;
 
 struct BinaryTree
@@ -56,18 +57,34 @@ int search(BinaryTree *root, int data)
 	else return search(root->right, data);
 }
 
+void printBinaryTree(BinaryTree *root)
+{
+	if (root->left != NULL) {
+		printBinaryTree(root->left);
+	}
+
+	printf("%d\n", root->data);
+
+	if (root->right != NULL) {
+		printBinaryTree(root->right);
+	}
+}
+
 int main()
 {
+	srand(time(0));
+
 	//store address of root node
 	BinaryTree *rootNode = NULL;
 	
-	rootNode = insert(rootNode, 10);
-	rootNode = insert(rootNode, 5);
-	rootNode = insert(rootNode, 9);
-	rootNode = insert(rootNode, 28);
-	rootNode = insert(rootNode, 16);
+	for (int i = 0; i < 10; i++)
+	{
+		rootNode = insert(rootNode, rand() % 100);
+	}
 
-	int num;
+	printBinaryTree(rootNode);
+
+	int num = 0;
 	printf("Enter number to be searched: ");
 	scanf("%d", &num);
 	
